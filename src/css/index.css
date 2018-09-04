@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+ol, li {
+  list-style-type: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -63,4 +67,23 @@ main > .right > .list ol{
 }
 main > .right > .list ol > li {
   margin: 12px 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer .time {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.footer .musicControl ol {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
