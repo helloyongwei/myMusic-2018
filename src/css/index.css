@@ -15,6 +15,8 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 14px;
+  padding: 50px;
+  background: #218D94;
 }
 
 .page {
@@ -22,8 +24,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 700px;
-  border: 1px solid red;
+  border-radius: 4px;
 }
 
 .page > main {
@@ -36,7 +37,6 @@ body {
 .page > main > .left {
   width: 340px;
   height: 340px;
-  border: 1px solid red;
 }
 .page > main > .left img {
   width: 100%;
@@ -46,16 +46,16 @@ body {
 .page > main > .right {
   width: 362px;
   height: 340px;
-  border: 1px solid green;
+  background-color: #F5F5F5;
 }
 
 main > .right > .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid green;
   height: 60px;
   padding: 0 30px;
+  background-color: #F5F5F5;
 }
 main > .right > .header .title {
     font-size: 18px;
@@ -63,16 +63,26 @@ main > .right > .header .title {
 
 main > .right > .list ol{
   list-style-type: none;
-  padding: 0 30px;
+  text-indent: 30px;
 }
 main > .right > .list ol > li {
-  margin: 12px 0;
+  padding: 12px 0;
 }
+main > .right > .list li:nth-child(odd){
+  background-color: #EAEAEA;
+}
+main > .right > .list li:nth-child(even){
+  background-color: #F5F5F5;
+}
+
 
 .footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #FDFDFD;
+  height: 50px;
+  width: 702px;
 }
 
 .footer .time {
