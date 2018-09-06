@@ -1,12 +1,28 @@
 {
-  "name": "myMusic-2018",
+  "name": "mymusic-2018",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloyongwei/myMusic-2018.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helloyongwei/myMusic-2018/issues"
+  },
+  "homepage": "https://github.com/helloyongwei/myMusic-2018#readme",
+  "description": "",
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "jquery": "^3.3.1",
+    "leancloud-storage": "^3.9.0",
+    "plupload": "^2.3.6",
+    "qiniu": "^7.2.1",
+    "qiniu-js": "^1.0.22"
+  }
 }
