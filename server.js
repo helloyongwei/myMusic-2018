@@ -3,9 +3,9 @@ const fs = require('fs')
 const qiniu = require('qiniu')
 
 
-const port = process.argv[2]
+const port = process.argv[2] || 8888
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(function(req, res) {
   const {url, method} = req
   if (url === '/uptoken') {
     res.statusCode = 200;
@@ -34,5 +34,7 @@ const server = http.createServer((req, res) => {
   
 });
 
-server.listen(port);
-console.log(`请打开http://localhost:${port}`)
+server.listen(port)
+console.log("请打开http://localhost:"+port)
+
+

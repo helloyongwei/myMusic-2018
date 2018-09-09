@@ -48,8 +48,10 @@ var uploader = Qiniu.uploader({
       },
       'UploadProgress': function(up, file) {
              // 每个文件上传时，处理相关的事情
+             console.log('uploading...')
       },
       'FileUploaded': function(up, file, info) {
+
              // 每个文件上传成功后，处理相关的事情
              // 其中info.response是文件上传成功后，服务端返回的json，形式如：
              // {
@@ -57,9 +59,15 @@ var uploader = Qiniu.uploader({
              //    "key": "gogopher.jpg"
              //  }
              // 查看简单反馈
-             // var domain = up.getOption('domain');
-             // var res = parseJSON(info.response);
-             // var sourceLink = domain +"/"+ res.key; 获取上传成功后的文件的Url
+             var domain = up.getOption('domain');
+             var res = JSON.parse(info.response);
+             var url = domain +"/"+ res.key;
+             
+
+             window.Event.trigger('new', {
+               name: res.key,
+               url: url
+             })
       },
       'Error': function(up, err, errTip) {
              //上传出错时，处理相关的事情
@@ -67,14 +75,6 @@ var uploader = Qiniu.uploader({
       'UploadComplete': function() {
              //队列文件处理完毕后，处理相关的事情
       },
-      'Key': function(up, file) {
-          // 若想在前端对每个文件的key进行个性化处理，可以配置该函数
-          // 该配置必须要在unique_names: false，save_key: false时才生效
-
-          var key = "";
-          // do something with key here
-          return key
-      }
   }
 });
 

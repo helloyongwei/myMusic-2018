@@ -27,11 +27,19 @@
     },
     toggleTab(event) {
       let li = event.target
+      if ($(li).hasClass('active')) {
+        return
+      }
       $(li).addClass('active').siblings().removeClass('active')
       let $songList = $('.songList')
       let $uploadSong = $('.uploadSong')
-      $songList.toggle('active')
-      $uploadSong.toggle('active')
+      if($songList.hasClass('active')) {
+        $songList.removeClass('active')
+        $uploadSong.addClass('active')
+      } else {
+        $songList.addClass('active')
+        $uploadSong.removeClass('active')
+      }
     }
   }
   controller.init(view, model)
